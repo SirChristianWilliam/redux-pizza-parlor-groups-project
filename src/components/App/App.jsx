@@ -26,7 +26,7 @@ function App() {
     <div>
       
       <Route exact path = "/"> 
-      <PizzaList/>
+        <PizzaList/>
       </Route>
      
       <Route exact path = "/customerform">
