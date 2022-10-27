@@ -9,6 +9,8 @@ function PizzaList() {
 
         <>
             <h2>PizzaList Component</h2>
+            
+            <button></button>
         </>
     )
 }
