@@ -1,9 +1,24 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import {useParams} from 'react-router-dom'
 
 function AdminPage() {
+
+    const params = useParams();
+    useEffect(()=>{
+        axios({
+            method: 'GET',
+            url: '/api/order'
+        })
+        .then((response)=>{
+
+        })
+        .catch((error)=>{
+            console.error('Admin /api/order GET error',error);
+        });
+
+    },[params.id]);
+
 
     return (
         <>
