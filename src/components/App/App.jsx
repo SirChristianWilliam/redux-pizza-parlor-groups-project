@@ -3,6 +3,10 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Header from '../Header/Header';
+import PizzaList from '../PizzaList/PizzaList';
+import CustomerForm from '../CustomerForm/CustomerForm';
+import CheckoutPage from '../CheckoutPage/CheckoutPage';
 
 //TODO: This is where the component imports will go
 
