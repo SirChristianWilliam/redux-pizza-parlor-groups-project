@@ -1,11 +1,21 @@
-// import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 // import { useSelector } from 'react-redux';
 // import axios from 'axios';
 
 // import { HashRouter as Router, Route, Link } from 'react-router-dom';
 // import { useDispatch } from 'react-redux';
 
-// function CheckoutPage() {
+function CheckoutPage() {
+
+    return (
+        <>
+            <h2>hello</h2>
+        </>
+    );
+
+}
+
+export default CheckoutPage;
 //     // const dispatch = useDispatch(); TODO will be used on line 14
 //     const cartItems = useSelector(store => store.cart);
 //     const handlecheckout = (evt) => {
@@ -13,7 +23,6 @@
 //         console.log(cartItems, "CART ITEMS BE");
 //         //TODO: Clear the cart later, this will be a DISPATCH 'CLEAR_CART', payload: {cartItems}
 //     }
-//     return (
 //         <>
 //             <h2>CheckoutPage Component</h2>
 //             <table>
@@ -33,6 +42,3 @@
 
 //         </>
 //     )
-// }
-
-// export default CheckoutPage;
