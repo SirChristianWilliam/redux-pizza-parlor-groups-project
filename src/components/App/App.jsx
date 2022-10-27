@@ -34,7 +34,7 @@ function App() {
       </Route>
 
       <Route exact path = "/checkout">
-        <CheckoutPage/>
+        {/* <CheckoutPage/> */}
       </Route>
 
       <Route exact path = "/admin">

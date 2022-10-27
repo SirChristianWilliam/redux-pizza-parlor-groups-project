@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+// import axios from 'axios';
+// import { useSelector } from 'react-redux';
+// import { useDispatch } from 'react-redux';
+// import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
-function CustomerForm({ addNewCustomer }) {
+function CustomerForm() {
     // let customer = useSelector(store => store.customerInfo);
 
     let [name, setName] = useState('');
@@ -46,7 +46,7 @@ function CustomerForm({ addNewCustomer }) {
     const addCustomer = (event) => {
         event.preventDefault();
         console.log(customerToAdd, "CUSTOMER TO BE ADDED");
-        addNewCustomer(customerToAdd);
+       
         dispatch({
             type: 'ADD_CUSTOMERINFO',
             payload: {
@@ -67,11 +67,7 @@ function CustomerForm({ addNewCustomer }) {
             <h2>Step 2: Customer Information</h2>
 
             <form onSubmit={(event) => addCustomer(event)}>
-                <input
-                    onChange={handleTypeChange}
-                    type={Boolean}
-                    placeholder='cost'
-                />
+                
                 <input
                     onChange={handleNameChange}
                     type='text'

@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom'
 
 function AdminPage() {
 
+    const params = useParams();
     useEffect(()=>{
         axios({
             method: 'GET',
