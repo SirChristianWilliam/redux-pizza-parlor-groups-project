@@ -7,6 +7,7 @@ import Header from '../Header/Header';
 import PizzaList from '../PizzaList/PizzaList';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import CheckoutPage from '../CheckoutPage/CheckoutPage';
+import AdminPage from '../AdminPage/AdminPage';
 
 //TODO: This is where the component imports will go
 
@@ -34,6 +35,10 @@ function App() {
 
       <Route exact path = "/checkout">
         <CheckoutPage/>
+      </Route>
+
+      <Route exact path = "/admin">
+        <AdminPage/>
       </Route>
       
     </div>
