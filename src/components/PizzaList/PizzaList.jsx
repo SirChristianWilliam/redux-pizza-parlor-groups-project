@@ -1,15 +1,30 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import {useSelector} from 'react-redux'
+import './PizzaList.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import PizzaItem from '../PizzaItem/PizzaItem';
+
 function PizzaList() {
-
+    //Need to just change this to the index.jsx
+    const pizzas = useSelector(store => store.pizzas);
+    
     return (
-
         <>
-            <h2>PizzaList Component</h2>
+           
+            <h2>Step 1: Select Your Pizza</h2>
             
-            <button></button>
+            <div>
+                <h3>
+                {pizzas.map((pizza, i) => {
+          return <PizzaItem key={i} pizza={pizza}  />;
+        })}      
+          </h3>
+                
+            </div>
+
+            <section> 
+            <Link to ='/checkout'> NEXT </Link>
+            </section>
+    
         </>
     )
 }

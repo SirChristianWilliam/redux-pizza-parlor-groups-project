@@ -31,6 +31,7 @@ const customerInfo = (state = {}, action) => {
             return {};
         
     }
+    return state;
 };
 
 const pizzas = (state = [], action) => {

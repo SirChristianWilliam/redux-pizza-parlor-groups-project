@@ -3,20 +3,47 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+
+//TODO: This is where the component imports will go
 import Header from '../Header/Header';
 import PizzaList from '../PizzaList/PizzaList';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import CheckoutPage from '../CheckoutPage/CheckoutPage';
 import AdminPage from '../AdminPage/AdminPage';
 
-//TODO: This is where the component imports will go
 
-//TODO GET Pizza's from server
-
-
-//TODO POST method
 
 function App() {
+  const dispatch = useDispatch();
+
+
+// GET Pizza's from server
+useEffect(() => {
+  //onPageLoad...
+    fetchPizzas();
+  }, []);
+
+  const fetchPizzas =() => {
+    console.log('in fetchPizzas');
+  
+  
+    axios ({
+      method: 'GET',
+      url:'/api/pizza'
+    })
+    .then((response) => {
+      //This week...
+      dispatch({//This is only when we're getting data 
+        //from the server and putting it in redux.
+        type:'SET_PIZZAS',
+        payload:response.data
+  
+      });
+    })
+    .catch((err) => {
+      console.error("Error in App.jsx GET", err)
+    });
+  }
 
   return (
     <div className='App'>
