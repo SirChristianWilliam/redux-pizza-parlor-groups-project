@@ -43,13 +43,6 @@ function CustomerForm({ addNewCustomer }) {
         });
     }
 
-    const pickupOrDelivery = (event) => {
-        setMethodOfGet({
-            customer: setMethodOfGet
-        })
-    }
-    
-
     const addCustomer = (event) => {
         event.preventDefault();
         console.log(customerToAdd, "CUSTOMER TO BE ADDED");
@@ -77,7 +70,7 @@ function CustomerForm({ addNewCustomer }) {
                 <input
                     onChange={handleTypeChange}
                     type={Boolean}
-                    placeholder='price'
+                    placeholder='cost'
                 />
                 <input
                     onChange={handleNameChange}
