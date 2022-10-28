@@ -1,0 +1,13 @@
+.tableDiv{
+    display: flex;
+    flex-direction: column;
+}
+tbody tr:nth-child(odd){
+    background-color: lightcoral;
+}
+th{
+    border: 1px solid black;
+}
+thead>tr{
+    background-color: grey;
+}
