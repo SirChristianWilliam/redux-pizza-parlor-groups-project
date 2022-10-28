@@ -9,6 +9,7 @@ function Header() {
         <>
          <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
+        <h4>Total:</h4>
       </header>
         </>
     )
