@@ -49,7 +49,6 @@ function CustomerForm() {
 
     const addCustomer = (event) => {
         event.preventDefault();
-            console.log("YOYOYOYOYOYOYO")
       
     
         dispatch({
