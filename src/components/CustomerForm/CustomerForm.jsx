@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react';
 // import { useSelector } from 'react-redux';
 // import { useDispatch } from 'react-redux';
 // import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import {useDispatch} from 'react-redux';
 
 function CustomerForm() {
     // let customer = useSelector(store => store.customerInfo);
+    const history = useHistory();
+    const dispatch= useDispatch();
 
     let [name, setName] = useState('');
     let [type, setType] = useState(false);
@@ -14,39 +18,40 @@ function CustomerForm() {
     let [zip, setZip] = useState('');
 
     const handleTypeChange = (event) => {
-        setType({
-            customer: setType
-        });
+        setType(
+             event.target.value
+        );
     }
 
     const handleNameChange = (event) => {
-        setName({
-            customer: setName
-        });
+        setName(
+           event.target.value
+        );
     }
 
     const handleCityChange = (event) => {
-        setCity({
-            customer: setCity
-        });
+        setCity(
+             event.target.value
+        );
     }
 
     const handleStreetAddressChange = (event) => {
-        setStreetAddress({
-            customer: setStreetAddress
-        });
+        setStreetAddress(
+           event.target.value
+        );
     }
 
     const handleZipChange = (event) => {
-        setZip({
-            customer: setZip
-        });
+        setZip(
+            event.target.value
+        );
     }
 
     const addCustomer = (event) => {
         event.preventDefault();
-        console.log(customerToAdd, "CUSTOMER TO BE ADDED");
-       
+            console.log("YOYOYOYOYOYOYO")
+      
+    
         dispatch({
             type: 'ADD_CUSTOMERINFO',
             payload: {
@@ -54,20 +59,22 @@ function CustomerForm() {
                 name,
                 streetaddress,
                 city,
-                zip,
-                methodOfGet
+                zip
+                // ,
+                // methodOfGet
             }
-        })
-        // TODO clear input fields
-    };
+        });
+        history.push('/checkout')
+    }
 
+    // TODO clear input fields
 
     return (
         <>
             <h2>Step 2: Customer Information</h2>
 
             <form onSubmit={(event) => addCustomer(event)}>
-                
+
                 <input
                     onChange={handleNameChange}
                     type='text'
@@ -92,25 +99,29 @@ function CustomerForm() {
                 />
                 <p>
                     Pickup
-                <input 
-                    onChange={handleTypeChange}
-                    type='radio'
+                    <input
+                        onChange={handleTypeChange}
+                        type='radio'
                     // checked='unchecked'
-                />
+                    />
                 </p>
-               
-               <p>
-                Delivery
-               <input
-                    onChange={handleTypeChange}
-                    type='radio'
-                    // checked='unchecked'
-                />
-               </p>
-              
 
+                <p>
+                    Delivery
+                    <input
+                        onChange={handleTypeChange}
+                        type='radio'
+                    // checked='unchecked'
+                    />
+                </p>
+
+                <button
+                type='submit'
+            >
+                Next
+            </button>
             </form>
-            <button type='submit'>Next</button>
+           
         </>
     )
 }
