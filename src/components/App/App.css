@@ -1,23 +1,11 @@
 .App {
   text-align: center;
 }
-.nameAndCostTable {
-  width:100%;
-}
-.nameAndCostTable th, .nameAndCostTable tr, .nameAndCostTable td {
-  border:1px solid black;
-  border-collapse: collapse;
-}
-.checkoutBtn {
-  float:right;
-  position:absolute;
-  padding:30px;
-  top:50%;
-}
 
 .deliverOrPickup {
   float:right;
   position:relative;
   right:25px;
 }
+
 
