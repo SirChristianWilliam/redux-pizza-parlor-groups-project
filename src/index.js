@@ -13,7 +13,7 @@ const cartPizzas = (state = [], action) => {
         case 'ADD_PIZZA_TO_CART':
             return [...state, action.payload];
         case 'REMOVE_PIZZA_FROM_CART':
-            // TODO, need to remove
+            return [...state.slice(action.payload.id)];
             logger('NEED TO REMOVE ITEM FROM PIZZA CART');
         case 'CLEAR_PIZZACART_AND_CUSTOMERINFO':
             return [];
